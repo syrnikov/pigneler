@@ -13,9 +13,32 @@
   <body>
     <div id="draggablea"></div>
     <!---->
+    <div id="registerScreen">
+      <div class="registerSplash">
+        <span class="logo1"></span>
+        <h2 class="bold">Welcome!</h2>
+        <div class="regText">
+          <span class="text1"
+            >piglener launcher is a new convinient way to experience
+            minecraft.</span
+          >
+          <span class="text1">To start, please pick a username!</span>
+          <span class="text1">(Official accounts are yet to be supported)</span>
+        </div>
+        <input
+          type="text"
+          class="minecraftInput"
+          placeholder="Username"
+          name="username-input"
+          id="username-input"
+        />
+        <button class="minecraft_button" id="RegButton">Register</button>
+      </div>
+    </div>
+    <!---->
     <div id="header">
       <div id="hleft">
-        <span id="logo"></span>
+        <span class="logo"></span>
       </div>
       <div id="hright">
         <div class="menu1">
@@ -76,13 +99,21 @@
             <span id="verver">1.20.4</span>
             <span id="vertype">Vanilla</span>
           </div>
-          <span id="vershow">></span>
+          <span class="vershow" id="vershow">></span>
         </div>
       </div>
       <div id="fcenter">
         <button class="minecraft_button">Play</button>
       </div>
-      <div id="fright"></div>
+      <div id="fright">
+        <div id="UserDisplay">
+          <span id="userHead"></span>
+          <div id="UserInfo">
+            <span id="UserDisplayName">Username</span>
+          </div>
+          <span class="vershow">></span>
+        </div>
+      </div>
     </div>
 
     <!-- You can also require other files to run in this process -->

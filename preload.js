@@ -1,11 +1,28 @@
-/**
- * The preload script runs before `index.html` is loaded
- * in the renderer. It has access to web APIs as well as
- * Electron's renderer process modules and some polyfilled
- * Node.js functions.
- *
- * https://www.electronjs.org/docs/latest/tutorial/sandbox
- */
-window.addEventListener('DOMContentLoaded', () => {
-  
-})
+// preload.js
+const { ipcRenderer } = require("electron");
+
+// Initialize store only when needed
+let store;
+ipcRenderer.on("init-store", () => {
+  const Store = require("electron-store");
+  store = new Store();
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("RegButton").addEventListener("click", () => {
+    const username = document.getElementById("username-input").value;
+    ipcRenderer.send("save-username", username);
+  });
+
+  ipcRenderer.on("username-loaded", (event, username) => {
+    if (username) {
+      document.getElementById("registerScreen").style.display = "none";
+      document.getElementById("UserDisplayName").textContent = username;
+    } else {
+      document.getElementById("registerScreen").style.display = "flex";
+    }
+  });
+
+  // Request initialization of the store
+  ipcRenderer.send("init-store");
+});

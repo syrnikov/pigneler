@@ -95,7 +95,7 @@ body {
   padding-right: 30px;
   padding-left: 30px;
 }
-#logo {
+.logo {
   border-radius: 10px;
   overflow: hidden;
   background-image: url(images/logo.png);
@@ -108,7 +108,7 @@ body {
   -webkit-filter: drop-shadow(0 5px 7px rgba(0, 0, 0, 0.3));
   filter: drop-shadow(0 5px 7px rgba(0, 0, 0, 0.3));
 }
-#logo:before {
+.logo:before {
   mix-blend-mode: overlay;
   content: "";
   position: absolute;
@@ -121,7 +121,7 @@ body {
   );
   left: -100px;
 }
-#logo:hover:before {
+.logo:hover:before {
   transition: left 600ms ease;
   left: 300px;
 }
@@ -244,7 +244,7 @@ body {
   font-family: "Minecraft";
   font-size: 14px;
 }
-#vershow {
+.vershow {
   font-family: "Minecraft";
   transform: rotate(90deg);
 }
@@ -321,7 +321,7 @@ body {
   padding-left: 5px;
   padding-right: 5px;
   align-items: center;
-  margin-bottom: 90px;
+  margin-bottom: 15vh;
   bottom: 0;
   position: fixed;
   width: 300px;
@@ -362,5 +362,130 @@ body {
 }
 #InstIcon2 {
   background-image: url("images/icons/Icon_187.webp");
+}
+
+/*REGISTRATION*/
+#registerScreen {
+  display: flex;
+  position: absolute;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("images/registerimg.png");
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+}
+.bold {
+  font-family: "Minecraft_Bold";
+  color: white;
+}
+.text1 {
+  font-family: "Minecraft";
+  color: white;
+}
+.logo1 {
+  display: inline;
+  border-radius: 10px;
+  overflow: hidden;
+  background-image: url(images/logo.png);
+  background-size: contain;
+  width: 16rem;
+  position: relative;
+  bottom: 30px;
+  background-repeat: no-repeat;
+  height: 4.2rem;
+  -webkit-filter: drop-shadow(0 5px 7px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 5px 7px rgba(0, 0, 0, 0.3));
+}
+.logo1:before {
+  mix-blend-mode: overlay;
+  content: "";
+  position: absolute;
+  height: 150%;
+  width: 50px;
+  transform: rotate(30deg);
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0)
+  );
+  left: -100px;
+}
+.logo1:hover:before {
+  transition: left 600ms ease;
+  left: 300px;
+}
+
+.registerSplash {
+  align-items: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("images/deepslate_bricks.png");
+  background-size: 20%;
+  image-rendering: pixelated;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  -webkit-box-shadow: inset 0px 4px 0px 0px #464646, 0px 2px 0px 0px #171718,
+    0px -2px 0px 0px #252529, -2px 0px 0px 0px #171718, 2px 0px 0px 0px #171718,
+    0px 5px 8px 0px rgba(0, 0, 0, 0.27);
+  box-shadow: inset 0px 4px 0px 0px #464646, 0px 2px 0px 0px #171718,
+    0px -2px 0px 0px #171718, -2px 0px 0px 0px #171718, 2px 0px 0px 0px #171718,
+    0px 5px 8px 0px rgba(0, 0, 0, 0.27);
+  justify-content: center;
+  min-height: 50vh;
+  max-width: 50vw;
+}
+.registerSplash button {
+  position: relative;
+  top: 20px;
+}
+.registerSplash input {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.minecraftInput {
+  background-color: rgba(0, 0, 0, 0.32);
+  color: white;
+  font-family: "Minecraft";
+  outline: none;
+  border: rgba(116, 116, 116, 0.5) 3px solid;
+  padding: 10px;
+  font-size: 15px;
+}
+.minecraftInput::before {
+  content: "";
+  position: relative;
+}
+.regText {
+  max-width: 80%;
+  padding: 10px;
+  text-align: center;
+}
+
+#UserDisplay {
+  transition: 0.1s ease-in-out;
+  cursor: pointer !important;
+  display: flex;
+  color: #fff;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 160px;
+}
+#userHead {
+  width: 64px;
+  height: 64px;
+  overflow: hidden;
+}
+#UserInfo {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: center;
+}
+#UserDisplayName {
+  font-family: "Minecraft";
+  font-size: 14px;
 }
 /* Add styles here to customize the appearance of your app */

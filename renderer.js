@@ -5,6 +5,13 @@
  * `contextIsolation` is turned on. Use the contextBridge API in `preload.js`
  * to expose Node.js functionality from the main process.
  */
+
+/**
+ *  main screen version picker
+ */
+let UsernameDisplay = document.getElementById("UserDisplayName");
+let regbutton = document.getElementById("RegButton");
+var inputValue = document.getElementById("username-input").value;
 let Installation = false;
 let InstallationPopUp = document.getElementById("InstPicker");
 function ToggleInstallationMenu() {
@@ -23,6 +30,19 @@ function ToggleInstallationMenu() {
 document
   .getElementById("versionp")
   .addEventListener("click", ToggleInstallationMenu);
-document
-  .getElementById("hero")
-  .addEventListener("click", ToggleInstallationMenu);
+function RegCheckProceed() {
+  var inputValue = document.getElementById("username-input").value;
+  if (inputValue.trim() !== "") {
+    // Use trim() to remove leading and trailing whitespaces
+    document.getElementById("registerScreen").style.display = "none";
+    location.reload();
+  } else {
+    alert("Input field is empty!");
+  }
+}
+
+regbutton.addEventListener("click", RegCheckProceed);
+
+/**
+ *
+ */
